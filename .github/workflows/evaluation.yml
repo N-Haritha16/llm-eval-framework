@@ -1,0 +1,9 @@
+name: LLM Evaluation
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: pip install -e .
+      - run: pytest

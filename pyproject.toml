@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-eval-framework"
+version = "0.1.0"
+description = "LLM and RAG evaluation framework"
+authors = [{ name = "Your Name" }]
+requires-python = ">=3.9"
+
+dependencies = [
+    "typer",
+    "pyyaml",
+    "nltk",
+    "rouge-score",
+    "bert-score",
+    "matplotlib",
+    "pytest"
+]
+
+[project.scripts]
+llm-eval = "llm_eval.cli:app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

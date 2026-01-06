@@ -1,10 +1,15 @@
-from llm_eval.dataset import load_benchmark
 from llm_eval.evaluator import evaluate
+from llm_eval.utils import load_benchmark
+
 
 def test_full_pipeline():
     dataset = load_benchmark("benchmarks/rag_benchmark.jsonl")
-    results = evaluate(dataset)
 
-    assert isinstance(results, dict)
+    predictions = [item["model_answer"] for item in dataset]
+    references = [item["expected_answer"] for item in dataset]
+
+    results = evaluate(predictions, references)
+
     assert "bleu" in results
-    assert results["bleu"]["mean"] >= 0.0
+    assert "rougeL" in results
+    assert "bertscore" in results

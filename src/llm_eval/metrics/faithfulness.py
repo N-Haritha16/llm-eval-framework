@@ -1,8 +1,5 @@
-from .base import Metric
-
-class FaithfulnessMetric(Metric):
+class FaithfulnessMetric:
     name = "faithfulness"
 
-    def compute(self, sample):
-        context = " ".join(sample["retrieved_contexts"])
-        return 1.0 if sample["model_answer"] in context else 0.0
+    def compute(self, predictions, references):
+        return [1.0 if p in r else 0.0 for p, r in zip(predictions, references)]

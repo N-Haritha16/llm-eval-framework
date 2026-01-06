@@ -1,10 +1,17 @@
 from rouge_score import rouge_scorer
-from .base import Metric
 
-class RougeLMetric(Metric):
-    name = "rouge_l"
 
-    def compute(self, sample):
-        scorer = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=True)
-        score = scorer.score(sample["expected_answer"], sample["model_answer"])
-        return score["rougeL"].fmeasure
+class RougeLMetric:
+    """
+    Computes ROUGE-L score for generated text vs reference text
+    """
+
+    def __init__(self):
+        self.scorer = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=True)
+
+    def compute(self, predictions, references):
+        scores = []
+        for pred, ref in zip(predictions, references):
+            score = self.scorer.score(ref, pred)
+            scores.append(score["rougeL"].fmeasure)
+        return sum(scores) / len(scores)

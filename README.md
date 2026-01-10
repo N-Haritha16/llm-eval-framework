@@ -24,7 +24,7 @@ This project focuses on correctness, reproducibility, and extensibility rather t
 
 6. Pytest-based test coverage
 
-7. Docker support for reproducibility
+7. Optional Docker support for reproducibility
 
 ## 📁 Project Structure
 

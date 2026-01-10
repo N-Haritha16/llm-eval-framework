@@ -1,9 +1,24 @@
-name: LLM Evaluation
-on: [push]
+name: LLM Evaluation CI
+
+on: [push, pull_request]
+
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - run: pip install -e .
-      - run: pytest
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: pip install -e .
+
+    - name: Run tests
+      run: python -m pytest
+
+    - name: Run evaluation
+      run: python -m llm_eval.cli examples/config.yaml results

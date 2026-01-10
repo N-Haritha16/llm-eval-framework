@@ -1,1 +1,25 @@
-{"query":"What is AI?","expected_answer":"Artificial Intelligence","retrieved_contexts":["Artificial Intelligence is called AI"],"model_answer":"Artificial Intelligence"}
+{"query":"What is AI?","expected_answer":"Artificial Intelligence","retrieved_contexts":["AI stands for Artificial Intelligence"],"model_answer":"Artificial Intelligence"}
+{"query":"What is ML?","expected_answer":"Machine Learning","retrieved_contexts":["ML is a subset of AI"],"model_answer":"Machine Learning"}
+{"query":"What is Python?","expected_answer":"A programming language","retrieved_contexts":["Python is a high-level language"],"model_answer":"A programming language"}
+{"query":"What is NLP?","expected_answer":"Natural Language Processing","retrieved_contexts":["NLP deals with text data"],"model_answer":"Natural Language Processing"}
+{"query":"What is RAG?","expected_answer":"Retrieval Augmented Generation","retrieved_contexts":["RAG combines retrieval with generation"],"model_answer":"Retrieval Augmented Generation"}
+{"query":"What is Docker?","expected_answer":"A containerization tool","retrieved_contexts":["Docker runs apps in containers"],"model_answer":"A containerization tool"}
+{"query":"What is Git?","expected_answer":"Version control system","retrieved_contexts":["Git tracks code changes"],"model_answer":"Version control system"}
+{"query":"What is API?","expected_answer":"Application Programming Interface","retrieved_contexts":["API connects systems"],"model_answer":"Application Programming Interface"}
+{"query":"What is CLI?","expected_answer":"Command Line Interface","retrieved_contexts":["CLI is text-based interface"],"model_answer":"Command Line Interface"}
+{"query":"What is JSON?","expected_answer":"Data format","retrieved_contexts":["JSON stores structured data"],"model_answer":"Data format"}
+{"query":"What is YAML?","expected_answer":"Configuration format","retrieved_contexts":["YAML is human readable"],"model_answer":"Configuration format"}
+{"query":"What is BLEU?","expected_answer":"Text evaluation metric","retrieved_contexts":["BLEU measures similarity"],"model_answer":"Text evaluation metric"}
+{"query":"What is ROUGE?","expected_answer":"Recall-based metric","retrieved_contexts":["ROUGE compares summaries"],"model_answer":"Recall-based metric"}
+{"query":"What is BERTScore?","expected_answer":"Semantic similarity metric","retrieved_contexts":["BERTScore uses embeddings"],"model_answer":"Semantic similarity metric"}
+{"query":"What is FastAPI?","expected_answer":"Python web framework","retrieved_contexts":["FastAPI builds APIs"],"model_answer":"Python web framework"}
+{"query":"What is PyTest?","expected_answer":"Testing framework","retrieved_contexts":["PyTest runs tests"],"model_answer":"Testing framework"}
+{"query":"What is CI/CD?","expected_answer":"Automation pipeline","retrieved_contexts":["CI/CD automates builds"],"model_answer":"Automation pipeline"}
+{"query":"What is GPU?","expected_answer":"Graphics Processing Unit","retrieved_contexts":["GPU accelerates compute"],"model_answer":"Graphics Processing Unit"}
+{"query":"What is CPU?","expected_answer":"Central Processing Unit","retrieved_contexts":["CPU runs programs"],"model_answer":"Central Processing Unit"}
+{"query":"What is LLM?","expected_answer":"Large Language Model","retrieved_contexts":["LLMs generate text"],"model_answer":"Large Language Model"}
+{"query":"What is OpenAI?","expected_answer":"AI research company","retrieved_contexts":["OpenAI builds GPT"],"model_answer":"AI research company"}
+{"query":"What is Anthropic?","expected_answer":"AI company","retrieved_contexts":["Anthropic builds Claude"],"model_answer":"AI company"}
+{"query":"What is Transformers?","expected_answer":"Deep learning architecture","retrieved_contexts":["Transformers power LLMs"],"model_answer":"Deep learning architecture"}
+{"query":"What is Token?","expected_answer":"Text unit","retrieved_contexts":["Tokens represent words"],"model_answer":"Text unit"}
+{"query":"What is Prompt?","expected_answer":"Input to LLM","retrieved_contexts":["Prompt guides output"],"model_answer":"Input to LLM"}

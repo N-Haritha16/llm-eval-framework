@@ -4,19 +4,17 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 
-# Install torch first
-RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+# Install core ML deps
+RUN pip install --upgrade pip
+RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
 
 # Copy project
 COPY . .
 
-# Upgrade pip
-RUN pip install --upgrade pip
+# Install runtime deps manually (NO HASH CHECK)
+RUN pip install \
+    typer pyyaml nltk rouge-score bert-score matplotlib \
+    fastapi uvicorn
 
-# Install project WITHOUT hash strictness
-RUN pip install -e . --no-deps || true
-
-# Force install API deps
-RUN pip install uvicorn fastapi
-
+# Default: run evaluation
 CMD ["python", "-m", "llm_eval.cli", "examples/config.yaml", "results"]

@@ -1,3 +1,5 @@
+# Updated Dockerfile - Jan 2026
+
 FROM python:3.10-slim
 
 WORKDIR /app

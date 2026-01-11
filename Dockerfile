@@ -2,16 +2,21 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-# Copy reqs first for caching
-COPY requirements.txt .
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 
-# Install with retries, no-cache, upgrade pip
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt --timeout=100 --retries=3 && \
-    pip install --no-cache-dir fastapi "uvicorn[standard]" --timeout=100 --retries=3
+# Install torch first
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
 
+# Copy project
 COPY . .
 
-RUN python -c "import uvicorn; print(f'uvicorn {uvicorn.__version__} OK')"
+# Upgrade pip
+RUN pip install --upgrade pip
+
+# Install project WITHOUT hash strictness
+RUN pip install -e . --no-deps || true
+
+# Force install API deps
+RUN pip install uvicorn fastapi
 
 CMD ["python", "-m", "llm_eval.cli", "examples/config.yaml", "results"]

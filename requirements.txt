@@ -1,5 +1,15 @@
-pytest
-pytest-cov
+typer
 fastapi
 uvicorn
+pytest
+pytest-cov
 
+nltk
+rouge-score
+bert-score
+sacrebleu
+transformers
+torch
+
+pyyaml
+matplotlib

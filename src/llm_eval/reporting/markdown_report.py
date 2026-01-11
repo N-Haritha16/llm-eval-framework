@@ -1,4 +1,4 @@
-def generate_markdown(results, path):
+def generate_markdown_report(results, path):
     with open(path, "w") as f:
         f.write("# LLM Evaluation Report\n\n")
         for metric, stats in results.items():

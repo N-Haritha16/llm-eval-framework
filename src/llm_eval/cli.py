@@ -1,7 +1,8 @@
 import typer
 from llm_eval.utils import load_config, load_benchmark
 from llm_eval.evaluator import evaluate
-from llm_eval.reports import generate_json, generate_markdown
+from llm_eval.reports import generate_json_report, generate_markdown_report
+
 from llm_eval.plots import generate_plots
 
 app = typer.Typer()
@@ -17,8 +18,9 @@ def run(config: str, output: str):
 
     results = evaluate(predictions, references)
 
-    generate_json(results, f"{output}/report.json")
-    generate_markdown(results, f"{output}/report.md")
+    generate_json_report(results, json_path)
+    generate_markdown_report(results, md_path)
+
     generate_plots(results, f"{output}/plots")
 
 

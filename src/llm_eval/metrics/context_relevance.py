@@ -1,6 +1,6 @@
 from .base import Metric
 
-class ContextRelevanceMetric(Metric):
+class ContextRelevance(Metric):   # <-- rename
     name = "context_relevance"
 
     def compute(self, sample):

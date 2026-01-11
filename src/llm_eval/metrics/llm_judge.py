@@ -1,6 +1,6 @@
 from .base import Metric
 
-class LLMJudgeMetric(Metric):
+class LLMJudge(Metric):
     name = "llm_judge"
 
     def compute(self, sample):

@@ -1,4 +1,6 @@
-class FaithfulnessMetric:
+from .base import Metric
+
+class Faithfulness(Metric):   
     name = "faithfulness"
 
     def compute(self, predictions, references):

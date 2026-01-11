@@ -6,6 +6,6 @@ COPY . .
 
 RUN pip install --upgrade pip \
     && pip install -e . \
-    && pip install fastapi uvicorn pytest pytest-cov
+    && pip install fastapi uvicorn
 
 CMD ["python", "-m", "llm_eval.cli", "examples/config.yaml", "results"]

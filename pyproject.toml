@@ -12,12 +12,15 @@ dependencies = [
     "bert-score",
     "torch>=1.0.0",
     "matplotlib",
-    "fsspec<=2025.10.0"
+    "fsspec<=2025.10.0",
+    "uvicorn[standard]>=0.30.0",
+    "fastapi>=0.115.0"
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest"
+    "pytest",
+    "pytest-cov"
 ]
 
 [project.scripts]

@@ -15,11 +15,12 @@ jobs:
         python-version: "3.10"
 
     - name: Install dependencies
-      run: pip install -e . pytest pytest-cov fastapi uvicorn
+      run: |
+        pip install -e .
+        pip install pytest pytest-cov fastapi uvicorn
 
+    - name: Run tests
+      run: python -m pytest
 
-    - name: Run tests with coverage
-      run: python -m pytest --cov=llm_eval
-
-   # - name: Run evaluation
-   #  run: python -m llm_eval.cli examples/config.yaml results
+    - name: Run evaluation
+      run: python -m llm_eval.cli examples/config.yaml results

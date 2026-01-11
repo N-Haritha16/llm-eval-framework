@@ -5,7 +5,6 @@ WORKDIR /app
 COPY . .
 
 RUN pip install --upgrade pip \
-    && pip install -e . \
-    && pip install fastapi uvicorn
+    && pip install -r requirements.txt
 
 CMD ["python", "-m", "llm_eval.cli", "examples/config.yaml", "results"]

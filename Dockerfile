@@ -2,11 +2,17 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
+# Copy project files
 COPY . .
 
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt \
-    --index-url https://download.pytorch.org/whl/cpu
+# Upgrade pip
+RUN pip install --upgrade pip
 
-# Default: Run evaluation
+# Install PyTorch CPU (separately)
+RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+# Install remaining dependencies
+RUN pip install -r requirements.txt
+
+# Default command (run evaluation)
 CMD ["python", "-m", "llm_eval.cli", "examples/config.yaml", "results"]

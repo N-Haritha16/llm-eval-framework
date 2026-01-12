@@ -3,6 +3,7 @@ pyyaml
 nltk
 rouge-score
 bert-score
+torch
 matplotlib
 fastapi
-uvicorn
+uvicorn[standard]

@@ -1,45 +1,22 @@
-import os
-import typer
+from pathlib import Path
 
-from llm_eval.utils import load_config, load_benchmark
+from llm_eval.config import load_config
 from llm_eval.evaluator import evaluate
 from llm_eval.reports import generate_json_report, generate_markdown_report
-from llm_eval.plots import generate_plots
-
-app = typer.Typer()
 
 
-@app.command()
-def run(config: str, output: str):
-    # Load config + dataset
-    cfg = load_config(config)
-    data = load_benchmark(cfg["dataset"])
+def main(config_path: str, output_dir: str | None = None):
+    cfg = load_config(config_path)
+    if output_dir is not None:
+        cfg.output_dir = output_dir
 
-    # Extract predictions & references
-    predictions = [item["model_answer"] for item in data]
-    references = [item["expected_answer"] for item in data]
+    results = evaluate(cfg)
 
-    # Evaluate
-    results = evaluate(predictions, references)
+    out_dir = Path(cfg.output_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
 
-    # Ensure output folder exists
-    os.makedirs(output, exist_ok=True)
+    json_path = out_dir / "report.json"
+    md_path = out_dir / "report.md"
 
-    # File paths
-    json_path = f"{output}/report.json"
-    md_path = f"{output}/report.md"
-
-    # Save reports
-    generate_json_report(results, json_path)
-    generate_markdown_report(results, md_path)
-
-    # Generate plots
-    generate_plots(results, f"{output}/plots")
-
-    print("Evaluation completed successfully!")
-    print(f"JSON report: {json_path}")
-    print(f"Markdown report: {md_path}")
-
-
-if __name__ == "__main__":
-    app()
+    generate_json_report(results, str(json_path))
+    generate_markdown_report(results["aggregates"], str(md_path))

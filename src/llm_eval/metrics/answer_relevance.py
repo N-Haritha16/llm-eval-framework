@@ -1,7 +1,10 @@
-from .base import Metric
+# src/llm_eval/metrics/answer_relevance.py
+class AnswerRelevanceMetric:
+    def __init__(self):
+        self.model = get_embedding_model()
 
-class AnswerRelevance(Metric):
-    name = "answer_relevance"
-
-    def compute(self, sample, references=None):
-        return 1.0 if len(sample["model_answer"]) > 15 else 0.4
+    def compute(self, query: str, answer: str) -> float:
+        q_emb = self.model.encode([query])
+        a_emb = self.model.encode([answer])
+        sim = cosine_similarity(q_emb, a_emb)[0][0]
+        return float(sim)

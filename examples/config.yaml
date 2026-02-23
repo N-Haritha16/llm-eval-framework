@@ -1,1 +1,27 @@
-dataset: benchmarks/rag_benchmark.jsonl
+dataset:
+  path: benchmarks/rag_benchmark.jsonl
+  format: jsonl
+
+models:
+  prediction_path: examples/model_outputs/model_a.jsonl
+
+metrics:
+  metrics:
+    - bleu
+    - rouge_l
+    - bertscore
+    - faithfulness
+    - context_relevance
+    - answer_relevance
+  bleu_max_ngram: 4
+
+# llm_judge:
+#   provider: anthropic    # or openai
+#   model: claude-3-haiku-20240307
+#   api_key_env: ANTHROPIC_API_KEY
+#   temperature: 0.0
+#   max_retries: 3
+#   backoff_seconds: 1.0
+
+output_dir: results
+log_level: INFO

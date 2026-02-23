@@ -1,5 +1,323 @@
 {
-  "bleu": 0.47374044388788505,
-  "rougeL": 1.0,
-  "bertscore": 1.0
+  "per_example": [
+    {
+      "query": "What is AI?",
+      "expected_answer": "Artificial Intelligence",
+      "model_answer": "Artificial Intelligence",
+      "bleu": 0.316227766016838,
+      "rouge_l": 1.0,
+      "bertscore": 1.000000238418579,
+      "faithfulness": 0.6096016764640808,
+      "context_relevance": 0.8835386037826538,
+      "answer_relevance": 0.6602404117584229
+    },
+    {
+      "query": "What is ML?",
+      "expected_answer": "Machine Learning",
+      "model_answer": "Machine Learning",
+      "bleu": 0.316227766016838,
+      "rouge_l": 1.0,
+      "bertscore": 1.0,
+      "faithfulness": 0.3816215693950653,
+      "context_relevance": 0.5663266777992249,
+      "answer_relevance": 0.2919044494628906
+    },
+    {
+      "query": "What is Python?",
+      "expected_answer": "A programming language",
+      "model_answer": "A programming language",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 0.9999998211860657,
+      "faithfulness": 0.600918710231781,
+      "context_relevance": 0.7975801229476929,
+      "answer_relevance": 0.5533714294433594
+    },
+    {
+      "query": "What is NLP?",
+      "expected_answer": "Natural Language Processing",
+      "model_answer": "Natural Language Processing",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 1.0,
+      "faithfulness": 0.6053349375724792,
+      "context_relevance": 0.7548340559005737,
+      "answer_relevance": 0.46689385175704956
+    },
+    {
+      "query": "What is RAG?",
+      "expected_answer": "Retrieval Augmented Generation",
+      "model_answer": "Retrieval Augmented Generation",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 0.9999999403953552,
+      "faithfulness": 0.6467067003250122,
+      "context_relevance": 0.6025066375732422,
+      "answer_relevance": 0.05881886184215546
+    },
+    {
+      "query": "What is Docker?",
+      "expected_answer": "A containerization tool",
+      "model_answer": "A containerization tool",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 1.0,
+      "faithfulness": 0.36950719356536865,
+      "context_relevance": 0.6282997727394104,
+      "answer_relevance": 0.4831913709640503
+    },
+    {
+      "query": "What is Git?",
+      "expected_answer": "Version control system",
+      "model_answer": "Version control system",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 1.000000238418579,
+      "faithfulness": 0.3887996971607208,
+      "context_relevance": 0.5937920808792114,
+      "answer_relevance": 0.3443840444087982
+    },
+    {
+      "query": "What is API?",
+      "expected_answer": "Application Programming Interface",
+      "model_answer": "Application Programming Interface",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 1.0,
+      "faithfulness": 0.2761353552341461,
+      "context_relevance": 0.5672568082809448,
+      "answer_relevance": 0.39176276326179504
+    },
+    {
+      "query": "What is CLI?",
+      "expected_answer": "Command Line Interface",
+      "model_answer": "Command Line Interface",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 0.9999997615814209,
+      "faithfulness": 0.5954943895339966,
+      "context_relevance": 0.7106928825378418,
+      "answer_relevance": 0.359642893075943
+    },
+    {
+      "query": "What is JSON?",
+      "expected_answer": "Data format",
+      "model_answer": "Data format",
+      "bleu": 0.316227766016838,
+      "rouge_l": 1.0,
+      "bertscore": 1.0000001192092896,
+      "faithfulness": 0.3319021463394165,
+      "context_relevance": 0.6854261755943298,
+      "answer_relevance": 0.1794615089893341
+    },
+    {
+      "query": "What is YAML?",
+      "expected_answer": "Configuration format",
+      "model_answer": "Configuration format",
+      "bleu": 0.316227766016838,
+      "rouge_l": 1.0,
+      "bertscore": 1.0000001192092896,
+      "faithfulness": 0.13959504663944244,
+      "context_relevance": 0.7513556480407715,
+      "answer_relevance": 0.12797364592552185
+    },
+    {
+      "query": "What is BLEU?",
+      "expected_answer": "Text evaluation metric",
+      "model_answer": "Text evaluation metric",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 1.0,
+      "faithfulness": 0.318400502204895,
+      "context_relevance": 0.6427620649337769,
+      "answer_relevance": 0.1067250519990921
+    },
+    {
+      "query": "What is ROUGE?",
+      "expected_answer": "Recall-based metric",
+      "model_answer": "Recall-based metric",
+      "bleu": 0.316227766016838,
+      "rouge_l": 1.0,
+      "bertscore": 1.0,
+      "faithfulness": 0.23174677789211273,
+      "context_relevance": 0.6325287818908691,
+      "answer_relevance": 0.023955300450325012
+    },
+    {
+      "query": "What is BERTScore?",
+      "expected_answer": "Semantic similarity metric",
+      "model_answer": "Semantic similarity metric",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 1.0,
+      "faithfulness": 0.2678258419036865,
+      "context_relevance": 0.7119523286819458,
+      "answer_relevance": 0.22613312304019928
+    },
+    {
+      "query": "What is FastAPI?",
+      "expected_answer": "Python web framework",
+      "model_answer": "Python web framework",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 1.0,
+      "faithfulness": 0.1249864250421524,
+      "context_relevance": 0.6661442518234253,
+      "answer_relevance": 0.0787096917629242
+    },
+    {
+      "query": "What is PyTest?",
+      "expected_answer": "Testing framework",
+      "model_answer": "Testing framework",
+      "bleu": 0.316227766016838,
+      "rouge_l": 1.0,
+      "bertscore": 1.0,
+      "faithfulness": 0.3847857713699341,
+      "context_relevance": 0.6770399808883667,
+      "answer_relevance": 0.05763540416955948
+    },
+    {
+      "query": "What is CI/CD?",
+      "expected_answer": "Automation pipeline",
+      "model_answer": "Automation pipeline",
+      "bleu": 0.316227766016838,
+      "rouge_l": 1.0,
+      "bertscore": 1.0,
+      "faithfulness": 0.40126317739486694,
+      "context_relevance": 0.5431875586509705,
+      "answer_relevance": 0.09714409708976746
+    },
+    {
+      "query": "What is GPU?",
+      "expected_answer": "Graphics Processing Unit",
+      "model_answer": "Graphics Processing Unit",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 1.0,
+      "faithfulness": 0.48254358768463135,
+      "context_relevance": 0.6262522339820862,
+      "answer_relevance": 0.5813137292861938
+    },
+    {
+      "query": "What is CPU?",
+      "expected_answer": "Central Processing Unit",
+      "model_answer": "Central Processing Unit",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 1.0000001192092896,
+      "faithfulness": 0.32644182443618774,
+      "context_relevance": 0.6533770561218262,
+      "answer_relevance": 0.3735155165195465
+    },
+    {
+      "query": "What is LLM?",
+      "expected_answer": "Large Language Model",
+      "model_answer": "Large Language Model",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 0.9999999403953552,
+      "faithfulness": 0.21239420771598816,
+      "context_relevance": 0.6348370313644409,
+      "answer_relevance": 0.15072140097618103
+    },
+    {
+      "query": "What is OpenAI?",
+      "expected_answer": "AI research company",
+      "model_answer": "AI research company",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 0.9999998807907104,
+      "faithfulness": 0.16116538643836975,
+      "context_relevance": 0.5654247999191284,
+      "answer_relevance": 0.32999420166015625
+    },
+    {
+      "query": "What is Anthropic?",
+      "expected_answer": "AI company",
+      "model_answer": "AI company",
+      "bleu": 0.316227766016838,
+      "rouge_l": 1.0,
+      "bertscore": 1.0000001192092896,
+      "faithfulness": 0.18205714225769043,
+      "context_relevance": 0.39952370524406433,
+      "answer_relevance": 0.1409575492143631
+    },
+    {
+      "query": "What is Transformers?",
+      "expected_answer": "Deep learning architecture",
+      "model_answer": "Deep learning architecture",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 0.9999997615814209,
+      "faithfulness": 0.13298574090003967,
+      "context_relevance": 0.4956010580062866,
+      "answer_relevance": 0.13821272552013397
+    },
+    {
+      "query": "What is Token?",
+      "expected_answer": "Text unit",
+      "model_answer": "Text unit",
+      "bleu": 0.316227766016838,
+      "rouge_l": 1.0,
+      "bertscore": 0.9999998807907104,
+      "faithfulness": 0.38413554430007935,
+      "context_relevance": 0.695491373538971,
+      "answer_relevance": 0.23716850578784943
+    },
+    {
+      "query": "What is Prompt?",
+      "expected_answer": "Input to LLM",
+      "model_answer": "Input to LLM",
+      "bleu": 0.5623413251903491,
+      "rouge_l": 1.0,
+      "bertscore": 1.0,
+      "faithfulness": 0.3294680714607239,
+      "context_relevance": 0.6426122188568115,
+      "answer_relevance": 0.21352039277553558
+    }
+  ],
+  "aggregates": {
+    "bleu": {
+      "mean": 0.47374044388788505,
+      "median": 0.5623413251903491,
+      "std": 0.11813450840328532,
+      "min": 0.316227766016838,
+      "max": 0.5623413251903491
+    },
+    "rouge_l": {
+      "mean": 1.0,
+      "median": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "bertscore": {
+      "mean": 0.9999999976158143,
+      "median": 1.0,
+      "std": 1.1858778109975708e-07,
+      "min": 0.9999997615814209,
+      "max": 1.000000238418579
+    },
+    "faithfulness": {
+      "mean": 0.3554326969385147,
+      "median": 0.3319021463394165,
+      "std": 0.1577162971872239,
+      "min": 0.1249864250421524,
+      "max": 0.6467067003250122
+    },
+    "context_relevance": {
+      "mean": 0.6451337563991547,
+      "median": 0.6426122188568115,
+      "std": 0.09693700445663339,
+      "min": 0.39952370524406433,
+      "max": 0.8835386037826538
+    },
+    "answer_relevance": {
+      "mean": 0.2669340768456459,
+      "median": 0.22613312304019928,
+      "std": 0.17695735518264127,
+      "min": 0.023955300450325012,
+      "max": 0.6602404117584229
+    }
+  }
 }

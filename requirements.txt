@@ -7,3 +7,5 @@ torch
 matplotlib
 fastapi
 uvicorn[standard]
+sentence-transformers
+

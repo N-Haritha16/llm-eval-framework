@@ -1,5 +1,13 @@
-import json
+from __future__ import annotations
 
-def generate_json_report(results, path):
-    with open(path, "w") as f:
-        json.dump(results, f, indent=2)
+import json
+from pathlib import Path
+from typing import Any, Dict
+
+
+def generate_json_report(results: Dict[str, Any], output_dir: str) -> None:
+    out_dir = Path(output_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    out_path = out_dir / "report.json"
+    out_path.write_text(json.dumps(results, indent=2), encoding="utf-8")

@@ -1,16 +1,24 @@
 # src/llm_eval/metrics/context_relevance.py
-from .embeddings import get_embedding_model
-from sklearn.metrics.pairwise import cosine_similarity
+
+from typing import List
 import numpy as np
 
-class ContextRelevanceMetric:
-    def __init__(self):
-        self.model = get_embedding_model()
+from .base import Metric
+from .embeddings import embed_texts, cosine
 
-    def compute(self, query: str, contexts: list[str]) -> float:
+class ContextRelevanceMetric(Metric):
+    name = "context_relevance"
+
+    def compute(self, sample: dict) -> float:
+        query: str = sample["query"]
+        contexts: List[str] = sample.get("retrieved_contexts", [])
+
         if not contexts:
             return 0.0
-        q_emb = self.model.encode([query])
-        c_embs = self.model.encode(contexts)
-        sims = cosine_similarity(q_emb, c_embs)[0]
+
+        # encode query and contexts using shared model
+        q_emb = embed_texts([query])[0]
+        ctx_embs = embed_texts(contexts)
+
+        sims = [cosine(q_emb, ctx_emb) for ctx_emb in ctx_embs]
         return float(np.mean(sims))

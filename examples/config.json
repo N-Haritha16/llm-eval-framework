@@ -1,0 +1,17 @@
+{
+  "dataset": {
+    "path": "benchmarks/rag_benchmark.jsonl"
+  },
+  "predictions_path": "examples/model_outputs/model_a.jsonl",
+  "output_dir": "results_json",
+  "metrics": {
+    "enabled": [
+      "bleu",
+      "rougeL",
+      "bertscore",
+      "faithfulness",
+      "context_relevance",
+      "answer_relevance"
+    ]
+  }
+}

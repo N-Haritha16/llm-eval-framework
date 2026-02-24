@@ -2,25 +2,20 @@ from __future__ import annotations
 
 from typing import Any, Dict
 
-import bert_score
+from bert_score import score as bert_score
 
-from .base import MetricBase
+from .base import Metric  # <- changed
 
-
-class BERTScoreMetric(MetricBase):
-    def __init__(self) -> None:
-        self.name = "bertscore"
+class BertScoreMetric(Metric):  # <- changed
+    name = "bertscore"
 
     def compute(self, sample: Dict[str, Any]) -> float:
-        reference = sample.get("expected_answer", "") or ""
         prediction = sample.get("model_answer", "") or ""
+        reference = sample.get("expected_answer", "") or ""
         if not reference or not prediction:
             return 0.0
 
-        P, R, F1 = bert_score.score(
-            [prediction],
-            [reference],
-            lang="en",
-            verbose=False,
-        )
-        return float(F1[0])
+        preds = [prediction]
+        refs = [reference]
+        _, _, f1 = bert_score(preds, refs, lang="en", verbose=False)
+        return float(f1.mean())

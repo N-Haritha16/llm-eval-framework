@@ -2,13 +2,11 @@ from __future__ import annotations
 
 from typing import Any, Dict, List
 
-import nltk
 from nltk.translate.bleu_score import SmoothingFunction, sentence_bleu
 
-from .base import MetricBase
+from .base import Metric  # <- changed
 
-
-class BLEUMetric(MetricBase):
+class BleuMetric(Metric):  # <- changed
     def __init__(self, max_ngram: int = 4) -> None:
         self.name = "bleu"
         self.max_ngram = max_ngram

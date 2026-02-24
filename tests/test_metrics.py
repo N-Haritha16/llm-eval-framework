@@ -1,6 +1,6 @@
-from llm_eval.metrics.bleu import BLEUMetric as BleuMetric
-from llm_eval.metrics.rouge import RougeMetric
-from llm_eval.metrics.bertscore import BERTScoreMetric
+from llm_eval.metrics.bleu import BleuMetric
+from llm_eval.metrics.rouge import RougeLMetric
+from llm_eval.metrics.bertscore import BertScoreMetric
 from llm_eval.metrics.faithfulness import FaithfulnessMetric
 from llm_eval.metrics.context_relevance import ContextRelevanceMetric
 from llm_eval.metrics.answer_relevance import AnswerRelevanceMetric
@@ -27,8 +27,8 @@ def test_other_metrics():
         ],
     }
 
-    assert 0.0 <= RougeMetric().compute(sample) <= 1.0
-    assert 0.0 <= BERTScoreMetric().compute(sample) <= 1.0
+    assert 0.0 <= RougeLMetric().compute(sample) <= 1.0
+    assert 0.0 <= BertScoreMetric().compute(sample) <= 1.0
     assert 0.0 <= FaithfulnessMetric().compute(sample) <= 1.0
     assert 0.0 <= ContextRelevanceMetric().compute(sample) <= 1.0
     assert 0.0 <= AnswerRelevanceMetric().compute(sample) <= 1.0

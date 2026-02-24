@@ -1,13 +1,23 @@
 # src/llm_eval/metrics/faithfulness.py
-class FaithfulnessMetric:
-    def __init__(self):
-        self.model = get_embedding_model()
 
-    def compute(self, answer: str, contexts: list[str]) -> float:
+from typing import List
+import numpy as np
+
+from .base import Metric
+from .embeddings import embed_texts, cosine
+
+class FaithfulnessMetric(Metric):
+    name = "faithfulness"
+
+    def compute(self, sample: dict) -> float:
+        answer: str = sample["model_answer"]
+        contexts: List[str] = sample.get("retrieved_contexts", [])
+
         if not contexts:
             return 0.0
-        ctx_text = " ".join(contexts)
-        ctx_emb = self.model.encode([ctx_text])
-        a_emb = self.model.encode([answer])
-        sim = cosine_similarity(ctx_emb, a_emb)[0][0]
-        return float(sim)
+
+        ans_emb = embed_texts([answer])[0]
+        ctx_embs = embed_texts(contexts)
+        sims = [cosine(ans_emb, ctx_emb) for ctx_emb in ctx_embs]
+        # average similarity as proxy for faithfulness
+        return float(np.mean(sims))

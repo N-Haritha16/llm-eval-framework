@@ -4,54 +4,44 @@ import logging
 import statistics
 from typing import Any, Dict, List
 
-from .config import EvalConfig
-from .dataset import load_dataset
-from .metrics.base import MetricBase
-from .metrics.bleu import BLEUMetric
-from .metrics.rouge import RougeMetric
-from .metrics.bertscore import BERTScoreMetric
-from .metrics.context_relevance import ContextRelevanceMetric
-from .metrics.answer_relevance import AnswerRelevanceMetric
-from .metrics.faithfulness import FaithfulnessMetric
-from .metrics.llm_judge import LLMJudgeMetric
+from llm_eval.metrics.bleu import BleuMetric
+from llm_eval.metrics.rouge import RougeLMetric
+from llm_eval.metrics.bertscore import BertScoreMetric
+from llm_eval.metrics.context_relevance import ContextRelevanceMetric
+from llm_eval.metrics.answer_relevance import AnswerRelevanceMetric
+from llm_eval.metrics.faithfulness import FaithfulnessMetric
+from llm_eval.metrics.llm_judge import LLMJudgeMetric
+from llm_eval.utils import load_benchmark
 
 logger = logging.getLogger(__name__)
 
-
-def _build_metric(name: str, cfg: EvalConfig) -> MetricBase:
-    n = name.lower()
-    if n == "bleu":
-        return BLEUMetric(max_ngram=cfg.metrics.bleu_max_ngram)
-    if n in {"rouge", "rouge_l"}:
-        return RougeMetric()
-    if n == "bertscore":
-        return BERTScoreMetric()
-    if n == "faithfulness":
-        return FaithfulnessMetric()
-    if n in {"context_relevance", "context_rel"}:
-        return ContextRelevanceMetric()
-    if n in {"answer_relevance", "answer_rel"}:
-        return AnswerRelevanceMetric()
-    if n == "llm_judge":
-        if not cfg.llm_judge:
-            raise ValueError("llm_judge metric requested but llm_judge config missing")
-        return LLMJudgeMetric(cfg.llm_judge)
-    raise ValueError(f"Unknown metric: {name}")
+METRIC_REGISTRY = {
+    "bleu": BleuMetric,
+    "rougeL": RougeLMetric,
+    "bertscore": BertScoreMetric,
+    "faithfulness": FaithfulnessMetric,
+    "context_relevance": ContextRelevanceMetric,
+    "answer_relevance": AnswerRelevanceMetric,
+    "llm_judge": LLMJudgeMetric,
+}
 
 
-def evaluate(cfg: EvalConfig) -> Dict[str, Any]:
-    # Debug: see what metrics config actually has
-    logger.info("ACTIVE CONFIG METRICS: %s", cfg.metrics.metrics)
+def _evaluate_internal(
+    samples: List[Dict[str, Any]],
+    metric_names: List[str],
+) -> Dict[str, Any]:
+    """
+    Core evaluation: operates on loaded samples and chosen metric names.
+    """
+    logger.info("Evaluating metrics: %s", metric_names)
 
-    samples = load_dataset(cfg.dataset)
-
-    metrics: List[MetricBase] = []
-    for mname in cfg.metrics.metrics:
-        try:
-            metric = _build_metric(mname, cfg)
-            metrics.append(metric)
-        except Exception as exc:
-            logger.warning("Skipping metric %s: %s", mname, exc)
+    metrics = []
+    for name in metric_names:
+        cls = METRIC_REGISTRY.get(name)
+        if cls is None:
+            logger.warning("Unknown metric %s, skipping", name)
+            continue
+        metrics.append(cls())
 
     per_example: List[Dict[str, Any]] = []
     metric_scores: Dict[str, List[float]] = {m.name: [] for m in metrics}
@@ -81,3 +71,18 @@ def evaluate(cfg: EvalConfig) -> Dict[str, Any]:
         }
 
     return {"per_example": per_example, "aggregates": aggregates}
+
+
+def evaluate(cfg) -> Dict[str, Any]:
+    """
+    Config-based entrypoint used by tests/test_evaluator.py.
+
+    Expects cfg to have:
+      - cfg.dataset: DatasetConfig with .path
+      - cfg.metrics: MetricsConfig with .metrics (list of metric names)
+    """
+    dataset_path = cfg.dataset.path
+    metric_names = getattr(cfg.metrics, "metrics", ["bleu", "rougeL", "bertscore"])
+
+    samples = load_benchmark(dataset_path)
+    return _evaluate_internal(samples, metric_names)

@@ -3,9 +3,7 @@ pyyaml
 nltk
 rouge-score
 bert-score
-torch
 matplotlib
 fastapi
 uvicorn[standard]
 sentence-transformers
-

@@ -14,14 +14,6 @@ dependencies = [
     "matplotlib",
     "fsspec<=2025.10.0",
     "uvicorn[standard]>=0.30.0",
-    "fastapi>=0.115.0"
+    "fastapi>=0.115.0",
+    "sentence-transformers"
 ]
-
-[project.optional-dependencies]
-dev = [
-    "pytest",
-    "pytest-cov"
-]
-
-[project.scripts]
-llm-eval = "llm_eval.cli:app"

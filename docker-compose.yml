@@ -1,17 +1,38 @@
 version: "3.9"
 
 services:
+  # One-shot evaluation run (batch job)
   llm-eval:
     build: .
     container_name: llm-eval
+    working_dir: /app
     volumes:
       - ./benchmarks:/app/benchmarks
       - ./examples:/app/examples
       - ./results:/app/results
     env_file:
       - .env.example
-    command: ["python", "-m", "llm_eval.cli", "examples/config.yaml", "results"]
+    command: ["python", "-m", "llm_eval.cli", "examples/config.yaml"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import llm_eval; print('healthy')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
+  # Long-running API (stays green)
+  llm-eval-api:
+    build: .
+    container_name: llm-eval-api
+    working_dir: /app
+    volumes:
+      - ./benchmarks:/app/benchmarks
+      - ./examples:/app/examples
+      - ./results:/app/results
+    env_file:
+      - .env.example
+    command: ["uvicorn", "llm_eval.api:app", "--host", "0.0.0.0", "--port", "8000"]
+    ports:
+      - "8000:8000"
     healthcheck:
       test: ["CMD", "python", "-c", "import llm_eval; print('healthy')"]
       interval: 30s

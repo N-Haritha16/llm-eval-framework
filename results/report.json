@@ -5,30 +5,30 @@
       "expected_answer": "Artificial Intelligence",
       "model_answer": "Artificial Intelligence",
       "bleu": 0.316227766016838,
-      "bertscore": 1.000000238418579,
+      "bertscore": 1.0000001192092896,
       "faithfulness": 0.609601616859436,
       "context_relevance": 0.8835384845733643,
-      "answer_relevance": 0.6602404117584229
+      "answer_relevance": 0.6602404713630676
     },
     {
       "query": "What is ML?",
       "expected_answer": "Machine Learning",
       "model_answer": "Machine Learning",
       "bleu": 0.316227766016838,
-      "bertscore": 1.0,
-      "faithfulness": 0.3816215991973877,
-      "context_relevance": 0.5663266777992249,
-      "answer_relevance": 0.2919044494628906
+      "bertscore": 1.0000001192092896,
+      "faithfulness": 0.3816215395927429,
+      "context_relevance": 0.5663267374038696,
+      "answer_relevance": 0.29190436005592346
     },
     {
       "query": "What is Python?",
       "expected_answer": "A programming language",
       "model_answer": "A programming language",
       "bleu": 0.5623413251903491,
-      "bertscore": 0.9999998211860657,
-      "faithfulness": 0.6009186506271362,
-      "context_relevance": 0.7975800037384033,
-      "answer_relevance": 0.5533714294433594
+      "bertscore": 0.9999998807907104,
+      "faithfulness": 0.6009187698364258,
+      "context_relevance": 0.7975800633430481,
+      "answer_relevance": 0.5533714890480042
     },
     {
       "query": "What is NLP?",
@@ -37,18 +37,18 @@
       "bleu": 0.5623413251903491,
       "bertscore": 1.0,
       "faithfulness": 0.605334997177124,
-      "context_relevance": 0.7548341155052185,
-      "answer_relevance": 0.46689385175704956
+      "context_relevance": 0.754833996295929,
+      "answer_relevance": 0.46689373254776
     },
     {
       "query": "What is RAG?",
       "expected_answer": "Retrieval Augmented Generation",
       "model_answer": "Retrieval Augmented Generation",
       "bleu": 0.5623413251903491,
-      "bertscore": 0.9999999403953552,
-      "faithfulness": 0.6467065811157227,
-      "context_relevance": 0.6025067567825317,
-      "answer_relevance": 0.05881886184215546
+      "bertscore": 0.9999998807907104,
+      "faithfulness": 0.6467067003250122,
+      "context_relevance": 0.6025066375732422,
+      "answer_relevance": 0.05881877243518829
     },
     {
       "query": "What is Docker?",
@@ -56,8 +56,8 @@
       "model_answer": "A containerization tool",
       "bleu": 0.5623413251903491,
       "bertscore": 1.0,
-      "faithfulness": 0.3695072531700134,
-      "context_relevance": 0.6282998323440552,
+      "faithfulness": 0.36950719356536865,
+      "context_relevance": 0.6282997131347656,
       "answer_relevance": 0.4831913709640503
     },
     {
@@ -67,8 +67,8 @@
       "bleu": 0.5623413251903491,
       "bertscore": 1.000000238418579,
       "faithfulness": 0.38879966735839844,
-      "context_relevance": 0.5937921404838562,
-      "answer_relevance": 0.3443840444087982
+      "context_relevance": 0.5937920808792114,
+      "answer_relevance": 0.3443840742111206
     },
     {
       "query": "What is API?",
@@ -76,19 +76,19 @@
       "model_answer": "Application Programming Interface",
       "bleu": 0.5623413251903491,
       "bertscore": 1.0,
-      "faithfulness": 0.2761353552341461,
-      "context_relevance": 0.5672568082809448,
-      "answer_relevance": 0.39176276326179504
+      "faithfulness": 0.27613526582717896,
+      "context_relevance": 0.5672566890716553,
+      "answer_relevance": 0.39176273345947266
     },
     {
       "query": "What is CLI?",
       "expected_answer": "Command Line Interface",
       "model_answer": "Command Line Interface",
       "bleu": 0.5623413251903491,
-      "bertscore": 0.9999997615814209,
-      "faithfulness": 0.5954943895339966,
-      "context_relevance": 0.7106927633285522,
-      "answer_relevance": 0.359642893075943
+      "bertscore": 0.9999998211860657,
+      "faithfulness": 0.5954943299293518,
+      "context_relevance": 0.7106928825378418,
+      "answer_relevance": 0.3596428632736206
     },
     {
       "query": "What is JSON?",
@@ -96,7 +96,7 @@
       "model_answer": "Data format",
       "bleu": 0.316227766016838,
       "bertscore": 1.0000001192092896,
-      "faithfulness": 0.33190208673477173,
+      "faithfulness": 0.3319021463394165,
       "context_relevance": 0.6854261159896851,
       "answer_relevance": 0.1794615089893341
     },
@@ -106,7 +106,7 @@
       "model_answer": "Configuration format",
       "bleu": 0.316227766016838,
       "bertscore": 1.0000001192092896,
-      "faithfulness": 0.13959503173828125,
+      "faithfulness": 0.1395949423313141,
       "context_relevance": 0.7513556480407715,
       "answer_relevance": 0.12797364592552185
     },
@@ -116,9 +116,9 @@
       "model_answer": "Text evaluation metric",
       "bleu": 0.5623413251903491,
       "bertscore": 1.0,
-      "faithfulness": 0.318400502204895,
-      "context_relevance": 0.6427621841430664,
-      "answer_relevance": 0.1067250519990921
+      "faithfulness": 0.3184005618095398,
+      "context_relevance": 0.6427620649337769,
+      "answer_relevance": 0.10672511160373688
     },
     {
       "query": "What is ROUGE?",
@@ -126,17 +126,17 @@
       "model_answer": "Recall-based metric",
       "bleu": 0.316227766016838,
       "bertscore": 1.0,
-      "faithfulness": 0.23174676299095154,
-      "context_relevance": 0.63252854347229,
-      "answer_relevance": 0.023955300450325012
+      "faithfulness": 0.23174670338630676,
+      "context_relevance": 0.6325287222862244,
+      "answer_relevance": 0.02395535632967949
     },
     {
       "query": "What is BERTScore?",
       "expected_answer": "Semantic similarity metric",
       "model_answer": "Semantic similarity metric",
       "bleu": 0.5623413251903491,
-      "bertscore": 1.0,
-      "faithfulness": 0.2678258419036865,
+      "bertscore": 1.0000001192092896,
+      "faithfulness": 0.2678259015083313,
       "context_relevance": 0.7119523882865906,
       "answer_relevance": 0.22613312304019928
     },
@@ -146,9 +146,9 @@
       "model_answer": "Python web framework",
       "bleu": 0.5623413251903491,
       "bertscore": 1.0,
-      "faithfulness": 0.12498646229505539,
-      "context_relevance": 0.6661441326141357,
-      "answer_relevance": 0.0787096917629242
+      "faithfulness": 0.1249864399433136,
+      "context_relevance": 0.6661442518234253,
+      "answer_relevance": 0.07870969921350479
     },
     {
       "query": "What is PyTest?",
@@ -156,9 +156,9 @@
       "model_answer": "Testing framework",
       "bleu": 0.316227766016838,
       "bertscore": 1.0,
-      "faithfulness": 0.3847857117652893,
-      "context_relevance": 0.6770399212837219,
-      "answer_relevance": 0.05763540416955948
+      "faithfulness": 0.3847857713699341,
+      "context_relevance": 0.6770399808883667,
+      "answer_relevance": 0.05763544887304306
     },
     {
       "query": "What is CI/CD?",
@@ -166,19 +166,19 @@
       "model_answer": "Automation pipeline",
       "bleu": 0.316227766016838,
       "bertscore": 1.0,
-      "faithfulness": 0.40126320719718933,
+      "faithfulness": 0.40126317739486694,
       "context_relevance": 0.5431877374649048,
-      "answer_relevance": 0.09714409708976746
+      "answer_relevance": 0.09714414179325104
     },
     {
       "query": "What is GPU?",
       "expected_answer": "Graphics Processing Unit",
       "model_answer": "Graphics Processing Unit",
       "bleu": 0.5623413251903491,
-      "bertscore": 1.0,
+      "bertscore": 1.0000001192092896,
       "faithfulness": 0.4825437068939209,
       "context_relevance": 0.6262521743774414,
-      "answer_relevance": 0.5813137292861938
+      "answer_relevance": 0.5813136696815491
     },
     {
       "query": "What is CPU?",
@@ -186,9 +186,9 @@
       "model_answer": "Central Processing Unit",
       "bleu": 0.5623413251903491,
       "bertscore": 1.0000001192092896,
-      "faithfulness": 0.32644182443618774,
-      "context_relevance": 0.6533770561218262,
-      "answer_relevance": 0.3735155165195465
+      "faithfulness": 0.32644176483154297,
+      "context_relevance": 0.653377115726471,
+      "answer_relevance": 0.3735154867172241
     },
     {
       "query": "What is LLM?",
@@ -196,8 +196,8 @@
       "model_answer": "Large Language Model",
       "bleu": 0.5623413251903491,
       "bertscore": 0.9999999403953552,
-      "faithfulness": 0.21239420771598816,
-      "context_relevance": 0.6348370313644409,
+      "faithfulness": 0.21239425241947174,
+      "context_relevance": 0.6348369717597961,
       "answer_relevance": 0.15072140097618103
     },
     {
@@ -205,50 +205,50 @@
       "expected_answer": "AI research company",
       "model_answer": "AI research company",
       "bleu": 0.5623413251903491,
-      "bertscore": 0.9999998807907104,
-      "faithfulness": 0.16116534173488617,
+      "bertscore": 0.9999998211860657,
+      "faithfulness": 0.16116532683372498,
       "context_relevance": 0.5654247999191284,
-      "answer_relevance": 0.32999420166015625
+      "answer_relevance": 0.32999423146247864
     },
     {
       "query": "What is Anthropic?",
       "expected_answer": "AI company",
       "model_answer": "AI company",
       "bleu": 0.316227766016838,
-      "bertscore": 1.0000001192092896,
-      "faithfulness": 0.18205717206001282,
-      "context_relevance": 0.3995237946510315,
-      "answer_relevance": 0.1409575492143631
+      "bertscore": 0.9999999403953552,
+      "faithfulness": 0.1820572316646576,
+      "context_relevance": 0.3995237648487091,
+      "answer_relevance": 0.14095759391784668
     },
     {
       "query": "What is Transformers?",
       "expected_answer": "Deep learning architecture",
       "model_answer": "Deep learning architecture",
       "bleu": 0.5623413251903491,
-      "bertscore": 0.9999997615814209,
-      "faithfulness": 0.13298574090003967,
-      "context_relevance": 0.4956010580062866,
-      "answer_relevance": 0.13821272552013397
+      "bertscore": 0.9999998211860657,
+      "faithfulness": 0.1329856961965561,
+      "context_relevance": 0.49560102820396423,
+      "answer_relevance": 0.13821280002593994
     },
     {
       "query": "What is Token?",
       "expected_answer": "Text unit",
       "model_answer": "Text unit",
       "bleu": 0.316227766016838,
-      "bertscore": 0.9999998807907104,
+      "bertscore": 1.0,
       "faithfulness": 0.38413554430007935,
-      "context_relevance": 0.695491373538971,
-      "answer_relevance": 0.23716850578784943
+      "context_relevance": 0.6954913139343262,
+      "answer_relevance": 0.23716853559017181
     },
     {
       "query": "What is Prompt?",
       "expected_answer": "Input to LLM",
       "model_answer": "Input to LLM",
       "bleu": 0.5623413251903491,
-      "bertscore": 1.0,
-      "faithfulness": 0.3294680714607239,
-      "context_relevance": 0.6426122188568115,
-      "answer_relevance": 0.21352039277553558
+      "bertscore": 0.9999998807907104,
+      "faithfulness": 0.3294680118560791,
+      "context_relevance": 0.6426121592521667,
+      "answer_relevance": 0.2135203331708908
     }
   ],
   "aggregates": {
@@ -260,32 +260,32 @@
       "max": 0.5623413251903491
     },
     "bertscore": {
-      "mean": 0.9999999976158143,
+      "mean": 1.0000000023841857,
       "median": 1.0,
-      "std": 1.1858778109975708e-07,
-      "min": 0.9999997615814209,
+      "std": 1.0987967130473053e-07,
+      "min": 0.9999998211860657,
       "max": 1.000000238418579
     },
     "faithfulness": {
-      "mean": 0.3554326930642128,
-      "median": 0.33190208673477173,
-      "std": 0.15771628886330427,
-      "min": 0.12498646229505539,
-      "max": 0.6467065811157227
+      "mean": 0.35543269038200376,
+      "median": 0.3319021463394165,
+      "std": 0.15771630842418935,
+      "min": 0.1249864399433136,
+      "max": 0.6467067003250122
     },
     "context_relevance": {
-      "mean": 0.6451337504386901,
-      "median": 0.6426122188568115,
-      "std": 0.0969369647686848,
-      "min": 0.3995237946510315,
+      "mean": 0.645133740901947,
+      "median": 0.6426121592521667,
+      "std": 0.0969369775706139,
+      "min": 0.3995237648487091,
       "max": 0.8835384845733643
     },
     "answer_relevance": {
-      "mean": 0.2669340768456459,
+      "mean": 0.2669340781867504,
       "median": 0.22613312304019928,
-      "std": 0.17695735518264127,
-      "min": 0.023955300450325012,
-      "max": 0.6602404117584229
+      "std": 0.17695734488449857,
+      "min": 0.02395535632967949,
+      "max": 0.6602404713630676
     }
   }
 }

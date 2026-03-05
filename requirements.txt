@@ -1,10 +1,7 @@
 typer
 pyyaml
 nltk
-rouge-score
-bert-score
 matplotlib
 fastapi
 uvicorn[standard]
-sentence-transformers
 anthropic
